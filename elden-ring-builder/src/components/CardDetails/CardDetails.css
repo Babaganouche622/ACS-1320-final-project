@@ -1,0 +1,48 @@
+.card-details {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas: 
+    "name name name . description description description"
+    "image image image image . . stats"
+    "image image image image . . stats";
+}
+
+.card-details h2 {
+  grid-area: name;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.card-details p {
+  grid-area: description;
+  font-size: 20px;
+  color: rgb(20, 19, 19);
+  padding-top: 0;
+}
+
+.card-details img {
+  grid-area: image;
+  max-width: 75%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-details table {
+  grid-area: stats;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: grey;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.stats h2 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
