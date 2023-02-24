@@ -5,7 +5,7 @@ import Title from '../Title/Title';
 
 export default function App() {
   return (
-    <section>
+    <section className='container'>
       <Title />
       <Outlet />
     </section>

@@ -5,7 +5,7 @@ import './Title.css';
 export default function Title() {
   
   return (
-    <div className='Title'>
+    <div className='title'>
       <header>
         <h1>Elden Ring</h1>
         <h3 className="Title-Subtitle">Generate information from the public Elden Ring API</h3>
