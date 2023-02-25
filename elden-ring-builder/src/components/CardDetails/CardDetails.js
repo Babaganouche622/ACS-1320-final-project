@@ -11,29 +11,29 @@ export default function CardDetails() {
       <p className="description">{state.data.description}</p>
       <img className="image" src={state.data.image} alt={state.data.name} />
       <table className="stats">
-        <h2>Base Stats</h2>
-        <h3>Attack:</h3>
+        {/* <h2>Base Stats</h2>
+        <h3>Attack:</h3> */}
         {state.data.attack.map((key) => 
           <tr>
             <td>{key.name}</td>
             <td>{key.amount}</td>
           </tr>
         )}
-        <h3>Defence:</h3>
+        {/* <h3>Defence:</h3> */}
         {state.data.defence.map((key) => 
           <tr>
             <td>{key.name}</td>
             <td>{key.amount}</td>
           </tr>
         )}
-        <h3>Required Attributes:</h3>
+        {/* <h3>Required Attributes:</h3> */}
         {state.data.requiredAttributes.map((key) => 
           <tr>
             <td>{key.name}</td>
             <td>{key.amount}</td>
           </tr>
         )}
-        <h3>Scales With:</h3>
+        {/* <h3>Scales With:</h3> */}
         {state.data.scalesWith.map((key) => 
           <tr>
             <td>{key.name}</td>

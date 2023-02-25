@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import CardList from "../CardList/CardList";
 import './Builder.css';
 
-const APIURL = 'https://eldenring.fanapis.com/api/'
+const APIURL = 'https://eldenring.fanapis.com/api/' // weapons/:name?
 
 export default function Builder() {
-  const [data, setData] = useState(null);
+  const [apiData, setData] = useState(null);
   const [menuSelection, setMenuSelection] = useState('weapons');
+  const [searchText, setSearchText] = useState('');
   const listOfCategories = [
     'ammos',
     'armors',
@@ -24,27 +25,43 @@ export default function Builder() {
     'talismans',
     'weapons',
   ];
+
+  // TODO: Fix code to loop until total items are reached.
   useEffect(() => {
-    fetch(`${APIURL}${menuSelection}?limit=2000`)
-      .then(response => response.json())
-      .then(data => setData(data))
-      .catch(error => console.error(error));
+    (async () => {
+      let response = await fetch(`${APIURL}${menuSelection}?limit=100&page=${0}`);
+      let data = await response.json();
+      response = await fetch(`${APIURL}${menuSelection}?limit=100&page=${1}`);
+      let newData = await response.json();
+      data.data.push(...newData.data);
+      response = await fetch(`${APIURL}${menuSelection}?limit=100&page=${2}`);
+      newData = await response.json();
+      data.data.push(...newData.data);
+      response = await fetch(`${APIURL}${menuSelection}?limit=100&page=${3}`);
+      newData = await response.json();
+      console.log(newData.data)
+      data.data.push(...newData.data);
+      setData(data);
+    })();
   }, [menuSelection]);
 
   function handleSelectChange(event) {
     setMenuSelection(`${event.target.value}`);
   }
 
+
   return (
     <div className='builder'>
-      {console.log(data)}
+      {console.log(apiData)}
+      <div className='searchBar'>
       <select value={menuSelection} onChange={handleSelectChange}>
         {listOfCategories.map((item, key) => (
           <option value={item} key={key}>{item}</option>
         ))}
       </select>
-      {console.log(data)}
-      <CardList data={data} setData={setData} />
+      <input type='text' placeholder='Search...' onChange={(e) => {setSearchText(e.target.value)}}/>
+      </div>
+      <CardList data={apiData} menuSelection={menuSelection} searchText={searchText}/>
     </div>
   );
 }

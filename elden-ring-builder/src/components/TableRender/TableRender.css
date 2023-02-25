@@ -1,0 +1,7 @@
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  grid-template-areas: "table1 table2 table3 table4";
+  width: 100%;
+}
