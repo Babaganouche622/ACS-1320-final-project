@@ -2,12 +2,12 @@ import React from 'react';
 import Card from '../Card/Card';
 import './CardList.css';
 
-export default function CardList({ data, menuSelection }) {
+export default function CardList({ data, menuSelection, searchText }) {
   return (
     <div className="card-list">
       {!data ? 
       <p> Loading...</p> : 
-        data.data.map((card) => (
+        data.data.filter(obj => obj.name.includes(searchText)).map((card) => (
           <Card data={card} key={card.id} menuSelection={menuSelection}/>
         ))}
     </div>

@@ -7,6 +7,7 @@ const APIURL = 'https://eldenring.fanapis.com/api/' // weapons/:name?
 export default function Builder() {
   const [apiData, setData] = useState(null);
   const [menuSelection, setMenuSelection] = useState('weapons');
+  const [searchText, setSearchText] = useState('');
   const listOfCategories = [
     'ammos',
     'armors',
@@ -48,15 +49,19 @@ export default function Builder() {
     setMenuSelection(`${event.target.value}`);
   }
 
+
   return (
     <div className='builder'>
       {console.log(apiData)}
+      <div className='searchBar'>
       <select value={menuSelection} onChange={handleSelectChange}>
         {listOfCategories.map((item, key) => (
           <option value={item} key={key}>{item}</option>
         ))}
       </select>
-      <CardList data={apiData} setData={setData} menuSelection={menuSelection}/>
+      <input type='text' placeholder='Search...' onChange={(e) => {setSearchText(e.target.value)}}/>
+      </div>
+      <CardList data={apiData} menuSelection={menuSelection} searchText={searchText}/>
     </div>
   );
 }

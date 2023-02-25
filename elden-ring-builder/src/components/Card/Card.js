@@ -1,20 +1,20 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import './Card.css';
+import TableRender from '../TableRender/TableRender';
 
 
 
 export default function Card({ data, menuSelection }) {
-  const statDisplay = useRef();
+  const [show, setShow] = useState(false);
 
   function displayDetails() {
     // change stats display visibility
-    if (data) {
-      console.log(statDisplay)
-      if (statDisplay.current.style.display === 'block') {
-        statDisplay.current.style.display = 'none';
-      } else {
-        statDisplay.current.style.display = 'block';
-      }
+    if (!show) {
+      console.log(show)
+      setShow(true)
+    } else {
+      console.log(show)
+      setShow(false)
     }
   }
 
@@ -24,39 +24,8 @@ export default function Card({ data, menuSelection }) {
       <p>{data.description}</p>
       <img src={data.image} alt={data.name} />
       {menuSelection === 'weapons' ? <button onClick={displayDetails}>Details</button> : null}
+      { !show ? null : <TableRender data={data}/> }
     </div>
   );
 }
 
-//     add a useRef to table
-//     <table className="stats" ref={statDisplay}>
-//       {/* <h2>Base Stats</h2>
-// <h3>Attack:</h3> */}
-//       {data.attack.map((key) =>
-//         <tr>
-//           <td>{key.name}</td>
-//           <td>{key.amount}</td>
-//         </tr>
-//       )}
-//       {/* <h3>Defence:</h3> */}
-//       {data.defence.map((key) =>
-//         <tr>
-//           <td>{key.name}</td>
-//           <td>{key.amount}</td>
-//         </tr>
-//       )}
-//       {/* <h3>Required Attributes:</h3> */}
-//       {data.requiredAttributes.map((key) =>
-//         <tr>
-//           <td>{key.name}</td>
-//           <td>{key.amount}</td>
-//         </tr>
-//       )}
-//       {/* <h3>Scales With:</h3> */}
-//       {data.scalesWith.map((key) =>
-//         <tr>
-//           <td>{key.name}</td>
-//           <td>{key.amount}</td>
-//         </tr>
-//       )}
-//     </table>

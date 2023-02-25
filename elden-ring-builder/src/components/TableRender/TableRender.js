@@ -1,85 +1,46 @@
-import React, { useTable } from 'react';
+import React from 'react';
+import './TableRender.css';
 
 export default function TableRender({ data }) {
-  const renderData = React.useMemo(
-    () => [
-    data.attack.map((key) =>
-        {
-          col1: key.name,
-          col2: key.amount,
-        },
-        ),
-      ],
-    []
-  );
-
-  const columns = React.useMemo(
-    () => [
-      {
-        Header: 'Name',
-        accessor: 'col1', // accessor is the "key" in the data
-      },
-      {
-        Header: 'Amount',
-        accessor: 'col2',
-      },
-    ],
-    []
-  );
-
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow,
-  } = useTable({ columns, renderData })
-
-
   return (
-    <table {...getTableProps()} style={{ border: 'solid 1px blue' }}>
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th
-                {...column.getHeaderProps()}
-                style={{
-                  borderBottom: 'solid 3px red',
-                  background: 'aliceblue',
-                  color: 'black',
-                  fontWeight: 'bold',
-                }}
-              >
-                {column.render('Header')}
-              </th>
-            ))}
+    <div className='stats'>
+      {console.log(data)}
+      <table className='table1'>
+          <h3>Attack:</h3>
+        {data.attack.map((key) =>
+          <tr>
+            <td>{key.name}</td>
+            <td>{key.amount}</td>
           </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map(row => {
-          prepareRow(row)
-          return (
-            <tr {...row.getRowProps()}>
-              {row.cells.map(cell => {
-                return (
-                  <td
-                    {...cell.getCellProps()}
-                    style={{
-                      padding: '10px',
-                      border: 'solid 1px gray',
-                      background: 'papayawhip',
-                    }}
-                  >
-                    {cell.render('Cell')}
-                  </td>
-                )
-              })}
-            </tr>
-          )
-        })}
-      </tbody>
-    </table>
+        )}
+      </table>
+      <table className='table2'>
+          <h3>Defence:</h3>
+        {data.defence.map((key) =>
+          <tr>
+            <td>{key.name}</td>
+            <td>{key.amount}</td>
+          </tr>
+        )}
+      </table>
+      <table className='table3'>
+          <h3>Required Attributes:</h3>
+        {data.requiredAttributes.map((key) =>
+          <tr>
+            <td>{key.name}</td>
+            <td>{key.amount}</td>
+          </tr>
+        )}
+      </table>
+      <table className='table4'>
+          <h3>Scales With:</h3>
+        {data.scalesWith.map((key) =>
+          <tr>
+            <td>{key.name}</td>
+            <td>{key.amount}</td>
+          </tr>
+        )}
+      </table>
+    </div>
   )
 }

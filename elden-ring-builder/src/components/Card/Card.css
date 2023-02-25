@@ -5,7 +5,7 @@
   box-shadow: 5px 5px 5px rgb(125, 70, 152);
   width: 500px;
   height: 600px;
-  border: 1px solid black;
+  border: 1px solid rgb(125, 70, 152);
   border-radius: 5px;
   background-color: grey;
   justify-content: space-between;
@@ -39,10 +39,3 @@ button:hover {
     box-shadow: 0px 0px 10px rgb(92, 246, 36);
 }
 
-.stats {
-  /* display: none; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-}

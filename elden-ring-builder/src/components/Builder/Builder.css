@@ -5,10 +5,26 @@
   width: 100%;
 }
 
+.searchBar {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  margin: auto;
+}
+
 select {
   background-color:rgb(209, 85, 147);
   color: black;
   align-self: center;
   font-size: 30px;
   border-radius: 2px;
+  margin: 10px;
+}
+input {
+  background-color:rgb(209, 85, 147);
+  color: black;
+  align-self: center;
+  font-size: 30px;
+  border-radius: 2px;
+  margin: 10px;
 }
