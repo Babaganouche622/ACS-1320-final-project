@@ -7,7 +7,7 @@ export default function CardList({ data, menuSelection, searchText }) {
     <div className="card-list">
       {!data ? 
       <p> Loading...</p> : 
-        data.data.filter(obj => obj.name.includes(searchText)).map((card) => (
+        data.data.filter(obj => obj.name.toLowerCase().includes(searchText.toLowerCase())).map((card) => (
           <Card data={card} key={card.id} menuSelection={menuSelection}/>
         ))}
     </div>

@@ -3,14 +3,22 @@
   display: flex;
   flex-direction: column;
   box-shadow: 5px 5px 5px rgb(125, 70, 152);
-  width: 500px;
-  height: 600px;
+  width: 550px;
+  height: 700px;
   border: 1px solid rgb(125, 70, 152);
   border-radius: 5px;
   background-color: grey;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+}
+
+.card:hover {
+  box-shadow: -10px -5px 10px rgb(209, 85, 147), 10px 10px 10px rgb(125, 70, 152);
+  border-right: 3px solid rgb(125, 70, 152);
+  border-bottom: 3px solid rgb(125, 70, 152);
+  border-left: 3px solid rgb(209, 85, 147);
+  border-top: 3px solid rgb(209, 85, 147);
 }
 
 .card img {
@@ -36,6 +44,6 @@
 }
 
 button:hover {
-    box-shadow: 0px 0px 10px rgb(92, 246, 36);
+  animation: card-expander 2s;
 }
 

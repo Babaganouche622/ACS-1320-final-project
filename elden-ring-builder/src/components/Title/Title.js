@@ -8,9 +8,9 @@ export default function Title() {
     <div className='title'>
       <img className='image1' src='https://cdn.donmai.us/original/c2/19/c21965256494384c33855542ff6e455e.png' alt='chibi ranni'></img>
       {/* <img className='image2' src='https://cdn.donmai.us/original/d1/d3/d1d39a1279dd6e6c216d33e1da58b13a.jpg' alt='chibi blaidd'></img> */}
-      <header className='Title-header'>
+      <header className='title-header'>
         <h1>Elden Ring</h1>
-        <h3 className="Title-Subtitle">Generate information from the public Elden Ring API</h3>
+        <h3 className="title-Subtitle">Generate information from the public Elden Ring API</h3>
 
         <div>
           <NavLink className={({ isActive }) => isActive ? "nav-link-active" : "nav-link" } to="/">Home</NavLink>

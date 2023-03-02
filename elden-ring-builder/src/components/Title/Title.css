@@ -12,6 +12,10 @@
   font-size: large;
 }
 
+.title-header{
+  padding-right: 20px;
+}
+
 .title h1 {
   font-size: 70px;
   font-weight: bold;
@@ -19,7 +23,7 @@
   padding: 0;
 }
 
-.Title-Subtitle {
+.title-Subtitle {
   color: rgb(20, 19, 19);
   padding-top: 0;
   font-size: 30px;
