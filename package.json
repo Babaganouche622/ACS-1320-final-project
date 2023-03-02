@@ -1,8 +1,8 @@
 {
-  "name": "eldern-ring-builder",
+  "name": "acs-1320-final-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Babaganouche622.github.io/ACS-1320-final-project",
+  "homepage": "http://Babaganouche622.github.io/acs-1320-final-project",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
