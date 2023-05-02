@@ -1,19 +1,12 @@
 .title {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  grid-template-areas: "image1 title image3";
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  width: auto;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
   border: 15px solid black;
   background-color: rgb(125, 70, 152);
   color: black;
   font-size: large;
-}
-
-.title-header{
-  padding-right: 20px;
 }
 
 .title h1 {
@@ -23,13 +16,13 @@
   padding: 0;
 }
 
-.title-Subtitle {
+.title-subtitle {
   color: rgb(20, 19, 19);
   padding-top: 0;
   font-size: 30px;
 }
 
-.title .nav-link{
+.title .nav-link {
   display: inline-block;
   padding: 0.5em 1em;
   color: yellow;
@@ -44,11 +37,56 @@
   font-size: 40px;
 }
 
-img {
-  object-fit:cover;
-  max-height: 300px;
+.title img {
+  height: 300px;
+  width: auto;
+  margin: 20px 50px;
 }
 
-.image4 {
-  padding-left: 100px;
+.title .image1 {
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px 5px rgb(195, 115, 245);
+}
+.title .image3 {
+  border-radius: 50% 75%;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px 5px rgb(195, 115, 245);
+}
+
+@media (max-width: 1200px) {
+  .title {
+    flex-direction: column;
+    border-width: 10px;
+    font-size: medium;
+  }
+
+  .title h1 {
+    font-size: 50px;
+  }
+
+  .title-header{
+  padding-left: 10px;
+  }
+  
+  .title .nav-link {
+    font-size: 30px;
+  }
+
+  .title-subtitle {
+    font-size: 20px;
+  }
+
+  .title img {
+    height: 200px;
+    width: auto;
+    margin: 50px 10px;
+  }
+
+  .title .image1 {
+    margin-top: 10px;
+  }
+  .title .image3 {
+    margin-bottom: 10px;
+  }
 }

@@ -2,7 +2,12 @@
   display: flex;
   flex-direction: column;
   background-color: black;
-  width: 100%;
+  width: 100sw;
+  border: 10px solid #a6861b;
+  /* background-clip: padding-box; */
+  background-origin: border-box; 
+  box-shadow: inset 0 0 0 10px #d4af37;
+  padding: 10px;
 }
 
 .searchBar {
@@ -10,6 +15,7 @@
   flex-direction: row;
   /* justify-content: space-between; */
   margin: auto;
+  margin-top: 10px;
 }
 
 select {
@@ -27,4 +33,15 @@ input {
   font-size: 30px;
   border-radius: 2px;
   margin: 10px;
+}
+
+@media (max-width: 1200px) {
+  .searchBar {
+    flex-direction: column;
+  }
+  select,
+  input {
+    font-size: 20px;
+    margin: 5px;
+  }
 }

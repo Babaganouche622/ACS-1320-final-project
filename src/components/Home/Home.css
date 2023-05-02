@@ -1,10 +1,16 @@
-.Home {
+.home-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   background-image: url('https://assets.reedpopcdn.com/Elden-Ring.jpeg/BROK/resize/1200x1200%3E/format/jpg/quality/70/Elden-Ring.jpeg');
-  background-size: cover;
-  height: 75%;
-  width: 100%;
-  padding-right: -30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100sw;
+  margin: auto;
+
+  border: 10px solid #a6861b;
+  /* background-clip: padding-box; */
+  background-origin: border-box; 
+  box-shadow: inset 0 0 0 10px #d4af37;
 }
