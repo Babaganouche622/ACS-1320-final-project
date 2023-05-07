@@ -5,7 +5,7 @@ import './Title.css';
 export default function Title() {
   
   return (
-    <div className='title'>
+    <div className='title' role="banner">
       <img className='image1' src='https://cdn.donmai.us/original/c2/19/c21965256494384c33855542ff6e455e.png' alt='chibi ranni'></img>
       {/* <img className='image2' src='https://cdn.donmai.us/original/d1/d3/d1d39a1279dd6e6c216d33e1da58b13a.jpg' alt='chibi blaidd'></img> */}
       <header className='title-header'>
@@ -13,8 +13,8 @@ export default function Title() {
         <h3 className="title-Subtitle">Generate information from the public Elden Ring API</h3>
 
         <div>
-          <NavLink className={({ isActive }) => isActive ? "nav-link-active" : "nav-link" } to="/">Home</NavLink>
-          <NavLink className={({ isActive }) => isActive ? "nav-link-active" : "nav-link" } to="/builder">Builder</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "nav-link-active" : "nav-link" } to="/" role="link">Home</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "nav-link-active" : "nav-link" } to="/builder" role="link">Builder</NavLink>
         </div>
 
       </header>
