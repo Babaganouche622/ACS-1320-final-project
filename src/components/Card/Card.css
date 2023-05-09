@@ -47,3 +47,9 @@ button:hover {
   animation: card-expander 2s;
 }
 
+@media only screen and (max-width: 600px) {
+  .card {
+    width: calc(85%);
+    margin: auto;
+  }
+}

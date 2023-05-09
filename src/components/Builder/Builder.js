@@ -51,15 +51,16 @@ export default function Builder() {
 
 
   return (
-    <div className='builder'>
+    <div className='builder' role='main' aria-label="Card list builder">
       {console.log(apiData)}
-      <div className='searchBar'>
-      <select value={menuSelection} onChange={handleSelectChange}>
+      <div className='searchBar' role="search">
+      <label htmlFor="category-select">Select category:</label>
+      <select value={menuSelection} onChange={handleSelectChange} aria-label="Select category">
         {listOfCategories.map((item, key) => (
           <option value={item} key={key}>{item}</option>
         ))}
       </select>
-      <input type='text' placeholder='Search...' onChange={(e) => {setSearchText(e.target.value)}}/>
+      <input type='text' placeholder='Search...' onChange={(e) => {setSearchText(e.target.value)}} aria-label="Search input" />
       </div>
       <CardList data={apiData} menuSelection={menuSelection} searchText={searchText}/>
     </div>
