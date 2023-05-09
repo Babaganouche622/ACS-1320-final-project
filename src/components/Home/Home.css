@@ -14,3 +14,14 @@
   background-origin: border-box; 
   box-shadow: inset 0 0 0 10px #d4af37;
 }
+
+@media (max-width: 1000px) {
+  .home-container {
+    height: 60vh;
+  }
+}
+@media (max-width: 500px) {
+  .home-container {
+    height: 30vh;
+  }
+}
