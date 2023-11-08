@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CardList from "../CardList/CardList";
 import './Builder.css';
+import * as DOMPurify from 'dompurify';
 
 const APIURL = 'https://eldenring.fanapis.com/api/' // weapons/:name?
 
@@ -49,6 +50,10 @@ export default function Builder() {
     setMenuSelection(`${event.target.value}`);
   }
 
+  function cleanInput(input) {
+    return DOMPurify.sanitize(input);
+  }
+
 
   return (
     <div className='builder' role='main' aria-label="Card list builder">
@@ -60,7 +65,7 @@ export default function Builder() {
           <option value={item} key={key}>{item}</option>
         ))}
       </select>
-      <input type='text' placeholder='Search...' onChange={(e) => {setSearchText(e.target.value)}} aria-label="Search input" />
+      <input type='text' placeholder='Search...' onChange={(e) => {setSearchText(cleanInput(e.target.value))}} aria-label="Search input" />
       </div>
       <CardList data={apiData} menuSelection={menuSelection} searchText={searchText}/>
     </div>
